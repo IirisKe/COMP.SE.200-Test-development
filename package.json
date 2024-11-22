@@ -1,0 +1,15 @@
+{
+    "name": "software-testing-assignment",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "test": "mocha"
+    },
+    "author": "",
+    "license": "MIT",
+    "dependencies": {
+        "mocha": "^10.8.2"
+    }
+}
