@@ -5,12 +5,14 @@
     "main": "index.js",
     "type": "module",
     "scripts": {
-        "test": "mocha"
+        "test": "mocha",
+        "coverage": "nyc npm test"
     },
     "author": "",
     "license": "MIT",
     "dependencies": {
+        "chai": "^5.1.2",
         "mocha": "^10.8.2",
-        "chai": "^5.1.2"
+        "nyc": "^17.1.0"
     }
 }
