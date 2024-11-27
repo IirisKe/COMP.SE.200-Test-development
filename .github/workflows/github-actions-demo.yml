@@ -18,8 +18,6 @@ jobs:
     - name: Run tests
       run: npm test
       continue-on-error: true
-    - name: Generate Coverage Report
-      run: npm run coverage
 
     - name: Upload to Coveralls
       uses: coverallsapp/github-action@v2.3.4   
