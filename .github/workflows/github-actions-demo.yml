@@ -20,7 +20,7 @@ jobs:
       continue-on-error: true
 <<<<<<< HEAD
     - name: Run tests with coverage
-      run: npm run coverag
+      run: npm run coverage
 =======
     - name: Make coverage
       run: make test-coverage
