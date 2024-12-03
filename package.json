@@ -1,18 +1,28 @@
 {
     "name": "software-testing-assignment",
     "version": "1.0.0",
-    "description": "",
+    "description": "A software testing assignment project",
     "main": "index.js",
     "type": "module",
     "scripts": {
-        "test": "mocha test/*.test.js",
-        "coverage": "nyc mocha test/*.test.js"
+      "test": "mocha test/*.js",
+      "coverage": "nyc mocha test/*.js"
     },
     "author": "",
     "license": "MIT",
     "dependencies": {
-        "chai": "^5.1.2",
-        "mocha": "^10.8.2",
-        "nyc": "^17.1.0"
+      "chai": "^5.1.2",
+      "mocha": "^10.8.2"
+    },
+    "devDependencies": {
+      "nyc": "^17.1.0"
+    },
+    "nyc": {
+      "reporter": ["text", "lcov"],
+      "report-dir": "./coverage",
+      "all": true,
+      "include": ["src/**/*.js"],
+      "exclude": ["test/**/*.js"]
     }
-}
+  }
+  
