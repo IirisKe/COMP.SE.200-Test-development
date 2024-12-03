@@ -20,9 +20,9 @@ jobs:
       continue-on-error: true
     - name: Run tests with coverage
       run: npm run coverage
-    - name: Upload to Coveralls
-      uses: coverallsapp/github-action@v2.3.4
-      with:
-        github-token: ${{ secrets.COVERALLS_REPO_TOKEN }}
-        path-to-lcov: "../.nyc_output"
-        debug: true
+      continue-on-error: true
+    - name: Upload coverage to Coveralls
+      run: |
+        cat ./coverage/lcov.info | npx coveralls
+      env:
+        COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
