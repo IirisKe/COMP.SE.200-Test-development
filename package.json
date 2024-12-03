@@ -26,7 +26,14 @@
         "all": true,
         "include": [
             "src/add.js",
-            "src/isEmpty.js"
+            "src/isEmpty.js",
+            "src/get.js",
+            "src/map.js",
+            "src/words.js",
+            "src/filter.js",
+            "src/chunk.js",
+            "src/memoize.js",
+            "src/reduce.js"
         ]
     }
 }
