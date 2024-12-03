@@ -21,8 +21,8 @@
       "reporter": ["text", "lcov"],
       "report-dir": "./coverage",
       "all": true,
-      "include": ["src/**/*.js"],
-      "exclude": ["test/**/*.js"]
+      "include": ["test/**/*.js"],
+      "exclude": ["src/**/*.js"]
     }
   }
   
