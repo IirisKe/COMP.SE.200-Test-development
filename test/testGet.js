@@ -3,7 +3,7 @@ import {expect} from 'chai';
 
 //Test Suite
 describe('get', () => {
-    it('TC01: Get value at a valid path', () => {
+    it('should return correct value with valid path', () => {
         const object = {a: [{b: {c: 3}}]};
         const path = 'a[0].b.c';
         const defaultValue = undefined;
@@ -14,7 +14,7 @@ describe('get', () => {
 
         expect(result).to.equal(expectedOutput);
     });
-    it ('TC02: Get value with array path format', () => {
+    it ('should return correct value with valid array format path', () => {
         const object = {a: [{b: {c: 3}}]};
         const path = ['a','0','b','c'];
         const defaultValue = undefined;
@@ -26,7 +26,7 @@ describe('get', () => {
         expect(result).to.equal(expectedOutput);
     });
 
-    it('TC03: Get default value when path does not exist', () => {
+    it('should return default value if path does not exist', () => {
         const object = { a: [{ b: { c: 3 } }] };
         const path = 'a.b.c';
         const defaultValue = 'default';
@@ -36,7 +36,7 @@ describe('get', () => {
         expect(result).to.equal(defaultValue);
     });
 
-    it ('TC04: Get value when object is null', () => {
+    it ('should return default value if object is null', () => {
         // Inputs
         const object = null;
         const path = 'a.b.c';
@@ -47,7 +47,7 @@ describe('get', () => {
         expect(result).to.equal(defaultValue);
     });
 
-    it('TC05: Get value when object is undefined', () => {
+    it('should return default value if object is undefined', () => {
         // Inputs
         const object = undefined;
         const path = 'a.b.c';
@@ -58,7 +58,7 @@ describe('get', () => {
         expect(result).to.equal(defaultValue);
     });
 
-    it('TC06: Get value at a deeply nested path', () => {
+    it('should return correct value with valid deeply nested path', () => {
         const object = {a: {b: { c: {d: {e: 5}}}}};
         const path = 'a.b.c.d.e';
         const defaultValue = undefined;
@@ -70,7 +70,7 @@ describe('get', () => {
         expect(result).to.equal(expectedOutput);
     });
 
-    it('TC07: Get value with invalid path format', () => {
+    it('should return default value with invalid path format', () => {
         const object = {a: {b: {c: 3}}};
         const path = 12345;
         const defaultValue = 'default';
@@ -80,7 +80,7 @@ describe('get', () => {
         expect(result).to.equal(defaultValue);
     });
 
-    it('TC08: Get value at non-nested path', () => {
+    it('should return correct value with valid non-nested path', () => {
         const object = {a: 10};
         const path = 'a';
         const defaultValue = undefined;
@@ -92,7 +92,7 @@ describe('get', () => {
         expect(result).to.equal(expectedOutput);
     });
 
-    it('TC09: Get value with special characters in path', ()=> {
+    it('should return correct value with valid path with special chars', ()=> {
         const object = {'a.b.c': {d: 4}};
         const path = ['a.b.c','d'];
         const defaultValue = 'default';
