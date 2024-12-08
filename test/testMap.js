@@ -16,12 +16,11 @@ describe("map", function () {
     const result = map(inputArray, functionToInvoke);
     expect(result).to.deep.equal(expectedResult);
   });
-  it("should return a type error when squaring an array which contains an item that is not a number", function () {
+  it("should throw a type error when squaring an array which contains an item that is not a number", function () {
     const inputArray = [3, "notNumber", 9];
     const functionToInvoke = square;
-    const expectedResult = TypeError;
     const result = map(inputArray, functionToInvoke);
-    expect(result).to.deep.equal(expectedResult);
+    expect(result).to.throw(TypeError);
   });
   it("should round array items to 3 decimal places", function () {
     const inputArray = [1.7389262, 4.8472572, 9.7344847];
