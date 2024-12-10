@@ -35,7 +35,7 @@ describe('words', () => {
 
         const expectedOutput = ['user123', 'and', 'data456'];
 
-        const result = words(inputString, pattern);
+        const result = words(inputString);
 
         expect(result).to.deep.equal(expectedOutput);
     });
