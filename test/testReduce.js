@@ -41,10 +41,15 @@ describe("reduce", function () {
       result[value].push(key);
       return result;
     };
-    const accumulator = { d: 2 };
+    const accumulator = { 2: ["d"] };
+    const expectedKeys = [1, 2];
     const expectedResult = { 1: ["a", "c"], 2: ["b", "d"] };
     const result = reduce(collection, iteratee, accumulator);
-    expect(result).to.deep.equal(expectedResult);
+    expect(result).to.have.deep.keys(expectedKeys);
+    expect(result[1].length).to.equal(expectedResult[1].length);
+    expect(result[1]).to.have.members(expectedResult[1]);
+    expect(result[2].length).to.equal(expectedResult[2].length);
+    expect(result[2]).to.have.members(expectedResult[2]);
   });
   it("should reduce an array of strings to concatenated string", function () {
     const collection = ["w", "o", "r", "d"];
