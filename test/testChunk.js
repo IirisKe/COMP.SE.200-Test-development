@@ -6,7 +6,8 @@ describe('chunk', function () {
         const inputArray = ['a', 'b', 'c', 'd']
         const chunkSize = 2
         const result = chunk(inputArray, chunkSize)
-        expect(result).to.deep.equal([['a', 'b'], ['c', 'd']])
+        const expected = [['a', 'b'], ['c', 'd']]
+        expect(result).to.equal(expected)
       })
       it('should split the array into chunks of different sizes', function() {
         const inputArray = ['a', 'b', 'c', 'd']
